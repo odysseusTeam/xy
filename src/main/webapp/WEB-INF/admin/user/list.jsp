@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <%@ include file="../navigation.jsp" %>
     <div class="alert alert-success " hidden="hidden" id="msg" role="alert">
-       <p> 提示:</p>
+        <p> 提示:</p>
     </div>
     <!-- End Navigation -->
     <div class="container-fluid main-content">
@@ -72,7 +72,7 @@
                     "sPrevious" : " 上一页 ",
                     "sNext" : " 下一页 ",
                     "sLast" : " 最后一页 "
-                    }
+                }
             },
             "aoColumns":
                     [
@@ -90,7 +90,7 @@
                                 render += '&nbsp;/&nbsp;';
                                 render +=  '<a class="delete-row" href="#" name='+id+'><i class="icon-remove"></i>删除</a>';
                                 return render;
-                             }
+                            }
                         }
 
                     ]
@@ -98,43 +98,44 @@
 
 // 3个参数的名字可以随便命名,但必须是3个参数,少一个都不行
         function retrieveData( sSource111,aoData111, fnCallback111) {
-                var arrayObj=new Array(
-                        { "mData": "loginName", 'sClass':'center'},
-                        { "mData": "name", 'sClass':'center'},
-                        { "mData": "email", 'sClass':'center'},
-                        { "mData": "phoneNumber", 'sClass':'center'},
-                        { "mData": "id", 'sClass':'center'});
-                var searchtext="";
-                var sort="";
-                var order="";
-                var pageOffset=0;
-                var size=10;
-                var sEcho=0;
-                for(var i=0;i<aoData111.length;i++){
-                    var value=aoData111[i].value;
-                    if(aoData111[i].name=="iSortCol_0"){
-                        sort=arrayObj[value].mData;
-                    }
-                    if(aoData111[i].name=="sSortDir_0"){
-                        order=value;
-                    }
-                    if(aoData111[i].name=="sSearch"){
-                        searchtext=value;
-                    }
-                    if(aoData111[i].name=="iDisplayStart"){
-                        pageOffset=value
-                    }
-                    if(aoData111[i].name=="iDisplayLength"){
-                        size=value
-                    }
-                    if(aoData111[i].name=="sEcho"){
-                        sEcho=value;
-                    }
-
+            var arrayObj=new Array(
+                    { "mData": "loginName", 'sClass':'center'},
+                    { "mData": "name", 'sClass':'center'},
+                    { "mData": "email", 'sClass':'center'},
+                    { "mData": "phoneNumber", 'sClass':'center'},
+                    { "mData": "id", 'sClass':'center'});
+            var searchtext="";
+            var sort="";
+            var order="";
+            var pageOffset=0;
+            var size=10;
+            var sEcho=0;
+            for(var i=0;i<aoData111.length;i++){
+                var value=aoData111[i].value;
+                if(aoData111[i].name=="iSortCol_0"){
+                    sort=arrayObj[value].mData;
                 }
+                if(aoData111[i].name=="sSortDir_0"){
+                    order=value;
+                }
+                if(aoData111[i].name=="sSearch"){
+                    searchtext=value;
+                }
+                if(aoData111[i].name=="iDisplayStart"){
+                    pageOffset=value
+                }
+                if(aoData111[i].name=="iDisplayLength"){
+                    size=value
+                }
+                if(aoData111[i].name=="sEcho"){
+                    sEcho=value;
+                }
+
+            }
+            var page=Math.floor(pageOffset/size)+1;
             $.ajax({
                 url : sSource111,//这个就是请求地址对应sAjaxSource
-                data :{"sort":sort,"order":order,"pageOffset":pageOffset,"size":size,"searchText":searchtext,"sEcho":sEcho},//这个是把datatable的一些基本数据传给后台,比如起始位置,每页显示的行数
+                data :{"sort":sort,"order":order,"pageOffset":pageOffset,"size":size,"searchText":searchtext,"page":page,"sEcho":sEcho},//这个是把datatable的一些基本数据传给后台,比如起始位置,每页显示的行数
                 type : 'post',
                 dataType : 'json',
                 async : false,
@@ -171,9 +172,9 @@
 <c:if test="${msg!=null}">
     <script type="application/javascript">
         $().ready(function(){
-            var msg="${msg.msg}";
-            if(msg){
-                $("#msg >p").text("提示:"+msg);
+            var result=${msg};
+            if(result){
+                $("#msg >p").text("提示:"+result.msg);
                 $("#msg").removeAttrs("hidden");
             }
             setTimeout(function(){    //设时延迟0.5s执行
