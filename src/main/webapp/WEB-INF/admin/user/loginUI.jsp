@@ -40,12 +40,8 @@
 <c:if test="${result!=null}">
     <script>
         $().ready(function(){
-            var success=${result.success};
             var msg='${result.msg}';
             var type="error";
-            if(success=true){
-                type="success"
-            }
             $._messengerDefaults = {
                 extraClasses: 'messenger-fixed messenger-theme-air  messenger-on-top messenger-on-right'
             }

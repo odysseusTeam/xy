@@ -16,15 +16,8 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Created by . on 2015/5/16.
-=======
- * Created by hbz on 2015/5/16.
->>>>>>> hbz
-=======
- * Created by liang on 2015/10/05.
->>>>>>> origin/liang
+ * Created by 黄柏樟 on 2015/10/23.
+ * @Explain: 管理员类控制器
  */
 @Controller("adminUserController")
 @RequestMapping("admin/user")

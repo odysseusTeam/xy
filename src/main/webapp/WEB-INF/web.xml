@@ -77,7 +77,10 @@
         <servlet-name>springMvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+    <!--修复数据  图片缓存清理-->
+    <listener>
+        <listener-class>com.aode.listener.CleanListener</listener-class>
+    </listener>
     <!-- spring监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

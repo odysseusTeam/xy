@@ -86,7 +86,7 @@
                             "bSortable": false,
                             "fnRender": function(obj) {
                                 var id=obj.aData.id;
-                                var render=  '<a target="_blank"  href="/admin/user/show/'+id+'"><i class="icon-search"></i>查看</a>';
+                                var render=  '<a target="_blank"  href="${pageContext.request.contextPath}/admin/user/show/'+id+'"><i class="icon-search"></i>查看</a>';
                                 render += '&nbsp;/&nbsp;';
                                 render +=  '<a class="delete-row" href="#" name='+id+'><i class="icon-remove"></i>删除</a>';
                                 return render;
