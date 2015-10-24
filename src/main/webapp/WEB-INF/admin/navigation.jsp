@@ -57,59 +57,77 @@
                 <li ><a href="${pageContext.request.contextPath}/admin/user/list" id="user_page">
                     <span aria-hidden="true" class="icon-user "  ></span>管理员</a>
                 </li>
+                <li ><a href="${pageContext.request.contextPath}/admin/member/list" id="member_page">
+                    <span aria-hidden="true" class="icon-group "></span>用户</a>
+                </li>
               <li class="dropdown"><a data-toggle="dropdown" href="#" id="news_page">
                     <span aria-hidden="true" class="icon-list "></span>新闻动态<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/admin/newsType/list">
-                            新闻类型</a>
+                            公告栏</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/news/list">新闻管理</a>
+                            <a href="${pageContext.request.contextPath}/admin/news/list">校友会新闻</a>
                         </li>
-
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/news/list">母校要闻</a>
+                        </li>
                     </ul>
                 </li>
                                 
-                <li class="dropdown"><a data-toggle="dropdown" href="#" id="course_page">
-                    <span aria-hidden="true" class="icon-camera-retro "></span>课程<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="${pageContext.request.contextPath}/admin/courseType/list">
-                            课程类型</a>
-                        </li>
-                        <li>
-                            <a href="${pageContext.request.contextPath}/admin/course/list">课程管理</a>
-                        </li>
 
-                    </ul>
-                </li>
-                
-                
-                <li class="dropdown"><a data-toggle="dropdown" href="#" id="app_page">
-                    <span aria-hidden="true" class="icon-music "></span>乐器<b class="caret"></b></a>
+                <li class="dropdown"><a data-toggle="dropdown" href="#" id="attention_page">
+                    <span aria-hidden="true" class="icon-camera-retro"></span>关注校友会<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/admin/instrumentType/list">
-                            乐器类型</a>
+                            校友会简介</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/instrument/list">乐器管理</a>
+                            <a href="${pageContext.request.contextPath}/admin/instrument/list">校友会章程</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/instrument/list"> 组织机构</a>
                         </li>
 
                     </ul>
                 </li>
-                <li class="dropdown"><a data-toggle="dropdown" href="#" id="study_page">
-                    <span aria-hidden="true" class="icon-book "></span>学习园地<b class="caret"></b></a>
+                <li class="dropdown"><a data-toggle="dropdown" href="#" id="donate_page">
+                    <span aria-hidden="true" class="icon-gittip "></span>校友捐赠<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/admin/studyType/list">
-                            文章类型</a>
+                            我要捐赠</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/study/list">文章管理</a>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">捐赠鸣谢</a>
                         </li>
 
                     </ul>
                 </li>
-                <li ><a href="${pageContext.request.contextPath}/admin/video/list">
-                    <span aria-hidden="true" class="icon-youtube-play "></span>视频中心</a>
+                <li class="dropdown"><a data-toggle="dropdown" href="#" id="services_page">
+                    <span aria-hidden="true" class="icon-cloud "></span>校友服务<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/admin/studyType/list">
+                            我要捐赠</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">捐赠鸣谢</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown"><a data-toggle="dropdown" href="#" id="essay_page">
+                    <span aria-hidden="true" class="icon-calendar"></span>东大校友在广东<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/admin/studyType/list">
+                            往期刊物</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">投稿</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a  href="${pageContext.request.contextPath}/admin/index" id="contact_page"><span aria-hidden="true" class="icon-phone"></span>联系我们</a>
                 </li>
             </ul>
         </div>
