@@ -6,7 +6,6 @@ import com.aode.dao.UserDao;
 import com.aode.model.User;
 import com.aode.service.UserService;
 import com.aode.util.Encrypt;
-import com.aode.service.UserService;
 import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,8 @@ import org.springframework.util.Assert;
 import java.util.Map;
 
 /**
- * Created by 林启聪 on 2015/5/15.
+ * Created by 周凯俊 on 2015/10/24.
+ * @Explain:
  */
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User>  implements UserService {
