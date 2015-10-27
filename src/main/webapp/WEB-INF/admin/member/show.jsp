@@ -47,19 +47,23 @@
                                           </div>
                                           <div class="form-group">
                                               <label for="name">姓名</label>
-                                              <input class="form-control"  id="name" name="name" type="text" value="${member.name}">
+                                              <input class="form-control" readonly id="name" name="name" type="text" value="${member.name}">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="password">密码</label>
+                                              <input class="form-control" readonly id="password" name="password" type="text" value="${member.password}">
                                           </div>
                                               <div class="form-group">
                                                   <label for="phoneNumber">手机号码</label>
-                                                  <input class="form-control"  id="phoneNumber" name="phoneNumber" type="text" value="${member.phoneNumber}">
+                                                  <input class="form-control" readonly id="phoneNumber" name="phoneNumber" type="text" value="${member.phoneNumber}">
                                               </div>
                                               <div class="form-group">
                                                   <label for="email">邮件</label>
-                                                  <input class="form-control"  id="email" name="email" type="email" value="${member.email}">
+                                                  <input class="form-control" readonly id="email" name="email" type="email" value="${member.email}">
                                               </div>
                                               <div class="form-group">
                                                   <label for="address">地址</label>
-                                                  <input class="form-control" id="address" name="address" type="address" value="${member.address}">
+                                                  <input class="form-control"readonly id="address" name="address" type="address" value="${member.address}">
                                               </div>
                                       </div>
                                   </div>
