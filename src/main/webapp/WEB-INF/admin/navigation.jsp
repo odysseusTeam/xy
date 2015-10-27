@@ -58,7 +58,7 @@
                     <span aria-hidden="true" class="icon-user "  ></span>管理员</a>
                 </li>
                 <li ><a href="${pageContext.request.contextPath}/admin/member/list" id="member_page">
-                    <span aria-hidden="true" class="icon-group "></span>用户</a>
+                    <span aria-hidden="true" class="icon-group "></span>校友</a>
                 </li>
               <li class="dropdown"><a data-toggle="dropdown" href="#" id="news_page">
                     <span aria-hidden="true" class="icon-list "></span>新闻动态<b class="caret"></b></a>
@@ -107,10 +107,16 @@
                     <span aria-hidden="true" class="icon-cloud "></span>校友服务<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/admin/studyType/list">
-                            我要捐赠</a>
+                            校友通讯</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/admin/study/list">捐赠鸣谢</a>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">校友呼声</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">校友企业</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/admin/study/list">纪念品</a>
                         </li>
                     </ul>
                 </li>

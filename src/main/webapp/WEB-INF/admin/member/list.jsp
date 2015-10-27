@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>
-        管理员管理
+        校友员管理
     </title>
     <meta charset="utf-8">
     <%@ include file="../se7en_css.jsp" %>
@@ -25,7 +25,7 @@
             <div class="col-lg-12">
                 <div class="widget-container fluid-height clearfix">
                     <div class="heading">
-                        <i class="icon-table"></i>管理员管理<a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/member/addUI" ><i class="icon-plus"></i>添加</a>
+                        <i class="icon-table"></i>校友员管理<a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/member/addUI" ><i class="icon-plus"></i>添加</a>
                     </div>
                     <div class="widget-content padded clearfix">
                         <table class="table table-bordered table-striped" id="datatable-editable">
@@ -33,6 +33,7 @@
                             <th width="200px"> 账号名</th>
                             <th>姓名</th>
                             <th>邮箱</th>
+                            <th>地址</th>
                             <th>手机号码</th>
                             <th width="150px">操作</th>
                             </thead>
@@ -79,6 +80,7 @@
                         { "mData": "loginName", 'sClass':'center'},
                         { "mData": "name", 'sClass':'center'},
                         { "mData": "email", 'sClass':'center'},
+                        { "mData": "address", 'sClass':'center'},
                         { "mData": "phoneNumber", 'sClass':'center'},
                         {
                             "mDataProp": "id",
@@ -102,6 +104,7 @@
                     { "mData": "loginName", 'sClass':'center'},
                     { "mData": "name", 'sClass':'center'},
                     { "mData": "email", 'sClass':'center'},
+                    { "mData": "address", 'sClass':'center'},
                     { "mData": "phoneNumber", 'sClass':'center'},
                     { "mData": "id", 'sClass':'center'});
             var searchtext="";

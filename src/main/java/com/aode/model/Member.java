@@ -41,6 +41,8 @@ public class Member {
 
     private String description; // 说明
 
+    private String address;  //地址
+
     public Long getId() {
         return id;
     }
@@ -103,6 +105,14 @@ public class Member {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

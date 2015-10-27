@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        管理员编辑
+        校友编辑
     </title>
     <%@ include file="../se7en_css.jsp" %>
 
@@ -24,17 +24,17 @@
                           <a href="${pageContext.request.contextPath}/admin/index"></a><i class="icon-home"></i>
                       </li>
                       <li>
-                          <a href="${pageContext.request.contextPath}/admin/member/list">管理员管理</a>
+                          <a href="${pageContext.request.contextPath}/admin/member/list">校友管理</a>
                       </li>
                       <li class="active">
-                          管理员保存
+                          校友保存
                       </li>
                   </ul>
               </div>
               <div class="col-md-12">
                   <div class="widget-container">
                       <div class="heading">
-                          <i class="icon-shield"></i>管理员保存
+                          <i class="icon-shield"></i>校友保存
                       </div>
                       <div class="widget-content padded">
                           <form action="${pageContext.request.contextPath}/admin/member/${ member.id == null ? 'add' : 'update' }" id="member-form" method="post">
@@ -67,6 +67,10 @@
                                               <div class="form-group">
                                                   <label for="email">邮件</label>
                                                   <input class="form-control" id="email" name="email" type="email" value="${member.email}">
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="address">地址</label>
+                                                  <input class="form-control" id="address" name="address" type="address" value="${member.address}">
                                               </div>
                                       </div>
                                   </div>
@@ -114,8 +118,8 @@
                 messages: {
                     name: "请填写您的姓名",
                     loginName: {
-                        required: "请填写您的管理员名",
-                        minlength: "管理员名长度不能小于5位"
+                        required: "请填写您的校友名",
+                        minlength: "校友名长度不能小于5位"
                     },
                     password: {
                         required: "请填写密码",

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        管理员编辑
+        校友编辑
     </title>
     <%@ include file="../se7en_css.jsp" %>
 
@@ -24,17 +24,17 @@
                           <a href="${pageContext.request.contextPath}/admin/index"></a><i class="icon-home"></i>
                       </li>
                       <li>
-                          <a href="${pageContext.request.contextPath}/admin/member/list">管理员管理</a>
+                          <a href="${pageContext.request.contextPath}/admin/member/list">校友管理</a>
                       </li>
                       <li class="active">
-                          管理员保存
+                          校友保存
                       </li>
                   </ul>
               </div>
               <div class="col-md-12">
                   <div class="widget-container">
                       <div class="heading">
-                          <i class="icon-shield"></i>管理员保存
+                          <i class="icon-shield"></i>校友保存
                       </div>
                       <div class="widget-content padded">
                           <form >
@@ -47,15 +47,19 @@
                                           </div>
                                           <div class="form-group">
                                               <label for="name">姓名</label>
-                                              <input class="form-control" readonly id="name" name="name" type="text" value="${member.name}">
+                                              <input class="form-control"  id="name" name="name" type="text" value="${member.name}">
                                           </div>
                                               <div class="form-group">
                                                   <label for="phoneNumber">手机号码</label>
-                                                  <input class="form-control" readonly id="phoneNumber" name="phoneNumber" type="text" value="${member.phoneNumber}">
+                                                  <input class="form-control"  id="phoneNumber" name="phoneNumber" type="text" value="${member.phoneNumber}">
                                               </div>
                                               <div class="form-group">
                                                   <label for="email">邮件</label>
-                                                  <input class="form-control" readonly id="email" name="email" type="email" value="${member.email}">
+                                                  <input class="form-control"  id="email" name="email" type="email" value="${member.email}">
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="address">地址</label>
+                                                  <input class="form-control" id="address" name="address" type="address" value="${member.address}">
                                               </div>
                                       </div>
                                   </div>
