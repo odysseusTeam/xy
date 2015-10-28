@@ -46,6 +46,8 @@ public class Member {
     private String department; //系别
 
     private String classes;  //班级
+    @ManyToOne(fetch = FetchType.LAZY)
+    private MessageList messageList = new MessageList();
 
     public Long getId() {
         return id;
@@ -133,6 +135,14 @@ public class Member {
 
     public void setClasses(String classes) {
         this.classes = classes;
+    }
+
+    public MessageList getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(MessageList messageList) {
+        this.messageList = messageList;
     }
 
     @Override

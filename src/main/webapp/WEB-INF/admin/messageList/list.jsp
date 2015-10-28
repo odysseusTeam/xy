@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" import="" %>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>
-        校友管理
+        通讯录管理
     </title>
     <meta charset="utf-8">
     <%@ include file="../se7en_css.jsp" %>
@@ -25,18 +25,13 @@
             <div class="col-lg-12">
                 <div class="widget-container fluid-height clearfix">
                     <div class="heading">
-                        <i class="icon-table"></i>校友管理<a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/member/addUI" ><i class="icon-plus"></i>添加</a>
+                        <i class="icon-table"></i>通讯录管理<a class="btn btn-sm btn-primary-outline pull-right" href="${pageContext.request.contextPath}/admin/messageList/addUI" ><i class="icon-plus"></i>添加</a>
                     </div>
                     <div class="widget-content padded clearfix">
                         <table class="table table-bordered table-striped" id="datatable-editable">
                             <thead>
-                            <th width="200px"> 账号名</th>
-                            <th>姓名</th>
-                            <th>系别</th>
-                            <th>班级</th>
-                            <th>邮箱</th>
-                            <th>地址</th>
-                            <th>手机号码</th>
+                            <th> 姓名</th>
+                            <th>人数</th>
                             <th width="150px">操作</th>
                             </thead>
                             <tbody>
@@ -52,13 +47,13 @@
 <%@ include file="../se7en_js.jsp" %>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#member_page").addClass("current");
+        $("#services_page").addClass("current");
         var oTable= $("#datatable-editable").dataTable({
             "bProcessing": true, // 是否显示取数据时的那个等待提示
             "bServerSide": true,//这个用来指明是通过服务端来取数据
             "sPaginationType": "full_numbers", //分页风格，full_number会把所有页码显示出来（大概是，自己尝试）
             "iDisplayLength": 10,//每页显示10条数据
-            "sAjaxSource": "${pageContext.request.contextPath}/admin/member/dataTable",//这个是请求的地址
+            "sAjaxSource": "${pageContext.request.contextPath}/admin/messageList/dataTable",//这个是请求的地址
             "fnServerData": retrieveData ,
             "oLanguage" : { // 汉化
                 "sProcessing" : "正在加载数据...",
@@ -79,20 +74,15 @@
             },
             "aoColumns":
                     [
-                        { "mData": "loginName", 'sClass':'center'},
                         { "mData": "name", 'sClass':'center'},
-                        { "mData": "department", 'sClass':'center'},
-                        { "mData": "classes", 'sClass':'center'},
-                        { "mData": "email", 'sClass':'center'},
-                        { "mData": "address", 'sClass':'center'},
-                        { "mData": "phoneNumber", 'sClass':'center'},
+                        { "mData": "number", 'sClass':'center'},
                         {
                             "mDataProp": "id",
                             "bSearchable": false,
                             "bSortable": false,
                             "fnRender": function(obj) {
                                 var id=obj.aData.id;
-                                var render=  '<a target="_blank"  href="${pageContext.request.contextPath}/admin/member/show/'+id+'"><i class="icon-search"></i>查看</a>';
+                                var render=  '<a target="_blank"  href="${pageContext.request.contextPath}/admin/messageList/show/'+id+'"><i class="icon-search"></i>查看</a>';
                                 render += '&nbsp;/&nbsp;';
                                 render +=  '<a class="delete-row" href="#" name='+id+'><i class="icon-remove"></i>删除</a>';
                                 return render;
@@ -105,13 +95,8 @@
 // 3个参数的名字可以随便命名,但必须是3个参数,少一个都不行
         function retrieveData( sSource111,aoData111, fnCallback111) {
             var arrayObj=new Array(
-                    { "mData": "loginName", 'sClass':'center'},
                     { "mData": "name", 'sClass':'center'},
-                    { "mData": "department", 'sClass':'center'},
-                    { "mData": "classes", 'sClass':'center'},
-                    { "mData": "email", 'sClass':'center'},
-                    { "mData": "address", 'sClass':'center'},
-                    { "mData": "phoneNumber", 'sClass':'center'},
+                    { "mData": "number", 'sClass':'center'},
                     { "mData": "id", 'sClass':'center'});
             var searchtext="";
             var sort="";
@@ -161,7 +146,7 @@
         $('#datatable-editable').on('click', 'a.delete-row', function (e) {
             var id=$(this).attr("name");
             var nRow = $(this).parents('tr')[0];
-            $.post("${pageContext.request.contextPath}/admin/member/delete/"+id, function(result){
+            $.post("${pageContext.request.contextPath}/admin/messageList/delete/"+id, function(result){
                 if(result.success){
                     oTable.fnDeleteRow( nRow );
                     $("#msg >p").text("提示:"+result.msg);

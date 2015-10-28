@@ -106,7 +106,7 @@
                 <li class="dropdown"><a data-toggle="dropdown" href="#" id="services_page">
                     <span aria-hidden="true" class="icon-cloud "></span>校友服务<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="${pageContext.request.contextPath}/admin/studyType/list">
+                        <li><a href="${pageContext.request.contextPath}/admin/messageList/list">
                             校友通讯</a>
                         </li>
                         <li>
