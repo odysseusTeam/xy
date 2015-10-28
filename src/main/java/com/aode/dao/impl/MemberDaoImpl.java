@@ -24,7 +24,7 @@ public class MemberDaoImpl  extends BaseDaoImpl<Member> implements MemberDao {
     }
     public PageBean dataTable(String searchText,PageBean pageBean){
         if (searchText==null|searchText.trim().isEmpty()){
-            String hql = " from Member u" ;
+            String hql = " from Member u";
             return  this.find(hql,null,pageBean);
         }else {
             String hql = " from Member u where u.loginName like :loginName or u.name like :name or u.email like :email" +
