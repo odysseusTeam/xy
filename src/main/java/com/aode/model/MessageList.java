@@ -7,12 +7,12 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 /**
- * Created by z84935761 on 2015/10/24.
+ * Created by 黄柏樟 on 2015/10/28.
+ * @Explain: 通讯录实体类
  */
 @Entity
-@Table(name="member")
-public class Member {
-    private static final long serialVersionUID = -1527992188149515014L;
+@Table(name="message_list")
+public class MessageList {
     @Id
     @GeneratedValue
     private Long id;
@@ -20,16 +20,6 @@ public class Member {
     @Length(max = 50)
     @Column(length = 50)
     private String name; //姓名
-
-    @Pattern(regexp = "^[0-9a-z_A-Z\\u4e00-\\u9fa5]+$")
-    @Length(min = 2, max = 20)
-    @Column(nullable = false, updatable = true, unique = true, length = 100)
-    private String loginName; // 登录名
-
-    @Pattern(regexp = "^[^\\s&\"<>]+$")
-    @Length(min = 4, max = 200)
-    @Column(nullable = false)
-    private String password; // 密码
 
     private String gender; // 性别
 
@@ -42,10 +32,6 @@ public class Member {
     private String description; // 说明
 
     private String address;  //地址
-
-    private String department; //系别
-
-    private String classes;  //班级
 
     public Long getId() {
         return id;
@@ -63,13 +49,6 @@ public class Member {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getDescription() {
         return description;
@@ -87,13 +66,6 @@ public class Member {
         this.email = email;
     }
 
-    public String getLoginName() {
-        return loginName;
-    }
-
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
 
     public String getGender() {
         return gender;
@@ -117,35 +89,5 @@ public class Member {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public String getClasses() {
-        return classes;
-    }
-
-    public void setClasses(String classes) {
-        this.classes = classes;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", loginName='" + loginName + '\'' +
-                ", password='" + password + '\'' +
-                ", gender='" + gender + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }

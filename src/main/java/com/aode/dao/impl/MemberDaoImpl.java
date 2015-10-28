@@ -28,12 +28,16 @@ public class MemberDaoImpl  extends BaseDaoImpl<Member> implements MemberDao {
             return  this.find(hql,null,pageBean);
         }else {
             String hql = " from Member u where u.loginName like :loginName or u.name like :name or u.email like :email" +
-                    " or u.phoneNumber like :phoneNumber";
+                    " or u.phoneNumber like :phoneNumber or u.address like :address or u.department like :department" +
+                    "or u.classes like :classes";
             Map<String, Object> params=new HashMap<String,Object>();
             params.put("loginName","%"+searchText+"%");
             params.put("name","%"+searchText+"%");
             params.put("email","%"+searchText+"%");
             params.put("phoneNumber", "%" + searchText + "%");
+            params.put("address","%"+searchText+"%");
+            params.put("classes","%"+searchText+"%");
+            params.put("department","%"+searchText+"%");
             return  this.find(hql,params,pageBean);
         }
 

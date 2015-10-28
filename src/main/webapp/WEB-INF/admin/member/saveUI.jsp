@@ -53,6 +53,14 @@
                                               <input class="form-control" id="name" name="name" type="text" value="${member.name}">
                                           </div>
                                           <div class="form-group">
+                                              <label for="department">系别</label>
+                                              <input class="form-control" id="department" name="department" type="text" value="${member.department}">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="classes">班级</label>
+                                              <input class="form-control" id="classes" name="classes" type="text" value="${member.classes}">
+                                          </div>
+                                          <div class="form-group">
                                               <label for="password">密码</label>
                                               <input class="form-control" id="password" name="password" type="password" >
                                           </div>

@@ -50,6 +50,14 @@
                                               <input class="form-control" readonly id="name" name="name" type="text" value="${member.name}">
                                           </div>
                                           <div class="form-group">
+                                              <label for="department">系别</label>
+                                              <input class="form-control" id="department" readonly name="department" type="text" value="${member.department}">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="classes">班级</label>
+                                              <input class="form-control" id="classes" readonly name="classes" type="text" value="${member.classes}">
+                                          </div>
+                                          <div class="form-group">
                                               <label for="password">密码</label>
                                               <input class="form-control" readonly id="password" name="password" type="text" value="${member.password}">
                                           </div>

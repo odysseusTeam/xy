@@ -32,6 +32,8 @@
                             <thead>
                             <th width="200px"> 账号名</th>
                             <th>姓名</th>
+                            <th>系别</th>
+                            <th>班级</th>
                             <th>邮箱</th>
                             <th>地址</th>
                             <th>手机号码</th>
@@ -79,6 +81,8 @@
                     [
                         { "mData": "loginName", 'sClass':'center'},
                         { "mData": "name", 'sClass':'center'},
+                        { "mData": "department", 'sClass':'center'},
+                        { "mData": "classes", 'sClass':'center'},
                         { "mData": "email", 'sClass':'center'},
                         { "mData": "address", 'sClass':'center'},
                         { "mData": "phoneNumber", 'sClass':'center'},
@@ -103,6 +107,8 @@
             var arrayObj=new Array(
                     { "mData": "loginName", 'sClass':'center'},
                     { "mData": "name", 'sClass':'center'},
+                    { "mData": "department", 'sClass':'center'},
+                    { "mData": "classes", 'sClass':'center'},
                     { "mData": "email", 'sClass':'center'},
                     { "mData": "address", 'sClass':'center'},
                     { "mData": "phoneNumber", 'sClass':'center'},
