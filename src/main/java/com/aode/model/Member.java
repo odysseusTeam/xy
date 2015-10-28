@@ -46,8 +46,9 @@ public class Member {
     private String department; //系别
 
     private String classes;  //班级
-    @ManyToOne(fetch = FetchType.LAZY)
-    private MessageList messageList = new MessageList();
+/*    @ManyToOne
+    @JsonIgnore
+    private MessageList messageList = new MessageList();  一对多通讯录*/
 
     public Long getId() {
         return id;
@@ -137,13 +138,13 @@ public class Member {
         this.classes = classes;
     }
 
-    public MessageList getMessageList() {
+/*    public MessageList getMessageList() {
         return messageList;
     }
 
     public void setMessageList(MessageList messageList) {
         this.messageList = messageList;
-    }
+    }*/
 
     @Override
     public String toString() {

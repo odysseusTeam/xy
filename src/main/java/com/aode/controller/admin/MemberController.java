@@ -4,6 +4,7 @@ import com.aode.been.AjaxResult;
 import com.aode.been.PageBean;
 import com.aode.model.Member;
 import com.aode.service.MemberService;
+import com.aode.service.MessageListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,8 @@ import java.util.Map;
 public class MemberController extends BaseAdminController<Member>{
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private MessageListService messageListService;
 
     @RequestMapping("list")
     public String list(){
@@ -60,6 +63,10 @@ public class MemberController extends BaseAdminController<Member>{
     @RequestMapping("add")
     public String add(Member member,RedirectAttributes redirectAttributes){
         try {
+/*            MessageList messageList = new MessageList();
+            messageList.setName(member.getLoginName());
+            messageListService.save(messageList);
+            member.setMessageList(messageList);*/
             memberService.save(member);
             redirectAttributes.addFlashAttribute("msg",RESULT_OK);
             return REDIRECT_URL+"list";
